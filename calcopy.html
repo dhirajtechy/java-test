@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Calculator</title>
+	<script type="text/javascript">
+	function cals(buttonValue)
+	{
+	if(buttonValue == 'c'){
+	document.getElementById('valueshow').value='0';
+	}
+	else{
+	if(document.getElementById('valueshow').value=='0'){
+	document.getElementById('valueshow').value=buttonValue;
+	}
+	else{
+	document.getElementById('valueshow').value+=buttonValue;
+	}
+	}
+	}
+	function cal(){
+	 var equation=document.getElementById('valueshow').value;
+	var answer= eval(equation);
+	document.getElementById('valueshow').value= answer;
+	}
+
+	</script>
+	<style type="text/CSS">
+	input.wid{
+	width:40px;
+	height:25px;
+	}
+	input.dispwid{
+	border:2px solid gray;
+    }
+	div{
+	width: 500px;
+	margin-left: 30%;
+	margin-top:  15%;
+	
+	}
+	table
+	{
+	width:  20%;
+	border: 2px solid black;
+	box-shadow: 0 0 2px 1px #f1f1f1;
+	}
+	.bgcolornumber{
+	width:40px;
+	height:25px;
+	}
+	.bgcolornumber:hover{
+	background-color: #222;
+	color: #f5f5f5;
+	transition: all 0.3s ease-in-out;
+	}
+	.bgopertion{
+	width:40px;
+	height:25px;
+	}
+	.bgopertion:hover{
+	backgroud-color: #66cc33;
+	color: #f9f9f9;
+	transition: all 0.3s ease-in-out;
+	
+	}
+	
+	</style>
+</head>
+<body>
+<div align="center">
+<h1 align="center">Calculator</h1>
+<form name=calculator method="get" onsubmit="javascript:cal(document.getElementById('valueshow').value);return false;">
+
+<table align="center">
+<tr>
+<td colspan="4" ><input class="dispwid" type="text" id="valueshow" placeholder="0">
+</tr>
+<tr>
+<td><input class="wid"  onclick="cals(this.value);" type="Reset" value="C" ></td>
+<td><input class="bgopertion" onclick="cals(this.value);" type="button" value="*"></td>
+<td><input class="bgopertion"  onclick="cals(this.value);" type="button" value="/"></td>
+<td><input class="bgopertion"type="button" value=" &Sqrt;"></td>
+</tr>
+
+
+<tr>'
+	<td><input class="bgcolornumber"  onclick="cals(this.value);" type="button" value="1"></td>
+	<td><input class="bgcolornumber"  onclick="cals(this.value);" type="button" value="2"</td>
+	<td><input class="bgcolornumber"  onclick="cals(this.value);" type="button" value="3"</td>
+	<td><input class="bgopertion"  onclick="cals(this.value);" type="button" value="+"</td>
+</tr>
+<tr>
+	<td><input class="bgcolornumber"  onclick="cals(this.value);" type="button" value="4"</td>
+	<td><input class="bgcolornumber"  onclick="cals(this.value);" type="button" value="5"</td>
+	<td><input class="bgcolornumber"  onclick="cals(this.value);" type="button" value="6"</td>
+	<td><input class="bgopertion"  onclick="cals(this.value);" type="button" value="-"</td>
+</tr>
+<tr>
+	<td><input class="bgcolornumber"  onclick="cals(this.value);" type="button" value="7"</td>
+	<td><input class="bgcolornumber"  onclick="cals(this.value);" type="button" value="8"</td>
+	<td><input class="bgcolornumber"  onclick="cals(this.value);" type="button" value="9"</td>
+	<td><input class="bgcolornumber"  onclick="cals(this.value);" type="button" value="."</td>
+</tr>
+<tr>
+    
+	<td><input class="bgopertion" type="button" value="^"</td>
+	<td><input class="bgcolornumber"  onclick="cals(this.value);" type="button" value="0"</td>
+	 <td colspan="2"><input  type="button" onclick="cal();" value="=" style="background-color:green; color:#ff0000; width:85px; heiht:25px"></td>
+	
+	
+</tr>
+</table>
+</form>
+ </div>
+</body>
+</html>
